@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "gulp prod",
+    "start": "npm run build && serve dist"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "gulp": "^4.0.2",
@@ -14,6 +18,7 @@
     "postcss-scss": "^4.0.6",
     "postcss-sorting": "^8.0.2",
     "purgecss": "^6.0.0",
-    "sass": "^1.63.4"
+    "sass": "^1.63.4",
+    "serve": "^14.2.3"
   }
 }
