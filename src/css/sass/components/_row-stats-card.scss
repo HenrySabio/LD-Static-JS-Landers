@@ -1,0 +1,34 @@
+.row-stats-card {
+	background: url("../static-assets/ld/bg/ld-pattern-3");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.stats-wrapper {
+		justify-content: center;
+		align-items: flex-start;
+
+		@media only screen and (max-width: 992px) {
+			flex-direction: column !important;
+			align-items: center;
+		}
+	}
+
+	.statistic {
+		h3 {
+			font-size: 32px;
+			color: white;
+		}
+		p {
+			font-weight: bold;
+			color: #fff;
+		}
+
+		@media only screen and (max-width: 992px) {
+			margin-bottom: 2rem;
+			width: 50%;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

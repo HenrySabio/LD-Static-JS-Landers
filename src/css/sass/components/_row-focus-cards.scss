@@ -1,0 +1,40 @@
+.row-focus-cards {
+	.card {
+		padding: 30px;
+		.card-icon {
+			margin: 0 auto;
+			max-width: 72px;
+		}
+	}
+
+	.card-title {
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		font-style: normal;
+		font-family: Mulish;
+		font-size: 20px;
+		line-height: 24px; /* 120% */
+		font-weight: 800;
+	}
+
+	/** Modifiers 
+	---------------------------------------------------------- */
+
+	// No focus/shadow on hover (On default - cards have focus on hover)
+	&:not(.card__no-focus) {
+		// No focus on hover
+		.card {
+			transition:
+				box-shadow 0.2s ease-in-out,
+				transform 0.2s ease-in-out;
+			box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+			&:hover,
+			&:focus,
+			&:active {
+				transform: scale(1.02);
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+}

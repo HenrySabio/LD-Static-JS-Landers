@@ -1,0 +1,28 @@
+.row-accordion {
+	// Text Under Accordion
+	.reverse-content-order {
+		flex-direction: column-reverse !important;
+	}
+	&.scholarship {
+		background-color: #fff4de;
+	}
+}
+
+// This applies to all bootstrap accordions using accordion-flush class
+.accordion-flush {
+	.accordion-item {
+		border: 1px solid $color-neutral !important;
+		border-bottom: none;
+
+		.accordion-button:not(.collapsed) {
+			background-color: unset;
+			font-weight: bold;
+			color: unset;
+			box-shadow: none;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid $color-neutral;
+		}
+	}
+}

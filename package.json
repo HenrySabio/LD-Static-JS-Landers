@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-ignore": "^3.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-prettier": "^5.0.0",
+    "gulp-purgecss": "^6.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-unicode": "^1.0.5",
+    "gulp-uglify": "^3.0.2",
+    "postcss-scss": "^4.0.6",
+    "postcss-sorting": "^8.0.2",
+    "purgecss": "^6.0.0",
+    "sass": "^1.63.4"
+  }
+}

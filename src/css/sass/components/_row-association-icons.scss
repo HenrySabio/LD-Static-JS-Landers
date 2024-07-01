@@ -1,0 +1,46 @@
+.association-icons {
+	// background: url("../static-assets/ld/bg/ld-pattern-3");
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	padding: 2rem 0 !important;
+
+	.associations-wrappers {
+		// padding-top:2rem;
+		// padding-bottom:2rem;
+	}
+
+	.association {
+		display: flex;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+
+		h3 {
+			font-size: 32px;
+			color: white;
+		}
+
+		p {
+			font-weight: bold;
+			color: #fff;
+		}
+
+		@media only screen and (max-width: 991px) {
+			max-width: 50%;
+
+			img {
+				max-width: 75%;
+			}
+
+			// &:first-child {
+			// 	margin-top: 4rem;
+			// }
+			// &:last-child {
+			// 	margin-bottom: 4rem;
+			// }
+		}
+	}
+
+	@media only screen and (max-width: 991px) {
+		padding: 3rem 0 !important;
+	}
+}

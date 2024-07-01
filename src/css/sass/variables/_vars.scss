@@ -1,0 +1,130 @@
+// Base Colors
+$color-accent-primary: #000;
+$color-accent-secondary: #e9a936;
+$color-accent-tertiary: #666;
+$color-accent-quadrary: #00738a;
+$color-accent-success: $color-accent-primary;
+$color-text: #030303;
+$color-text-darkbg: #fff;
+$color-neutral: #f5f4f5;
+$color-gray: #fbf9f9;
+$color-white: #fff;
+$color-overlay: #000;
+
+$overlay-opacity: 0.45;
+$color-border: #ccc;
+
+// Theme Colors
+$color-theme-dark-blue: #194799;
+
+// Typography
+//-----------------------------
+$font-stack-primary: "Mulish", san-serif;
+$font-stack-secondary: $font-stack-primary;
+
+// H1
+$h1-size: 50px;
+$h1-color: $color-text;
+$h1-font-weight: 900;
+$h1-transform: none;
+
+// H2
+$h2-size: 38px;
+$h2-color: $color-text;
+$h2-font-weight: 900;
+$h2-separation-distance: 50px;
+$h2-transform: none;
+
+// H3
+$h3-size: 28px;
+$h3-color: $color-text;
+$h3-font-weight: 900;
+$h3-transform: none;
+
+// H4
+$h4-size: 26px;
+$h4-color: $color-text;
+$h4-font-weight: 900;
+$h4-transform: none;
+
+// H5
+$h5-size: 20px;
+$h5-color: $color-text;
+$h5-font-weight: 900;
+$h5-transform: none;
+
+// H6
+$h6-size: 16px;
+$h6-color: $color-text;
+$h6-font-weight: 700;
+$h6-transform: none;
+
+// General
+//-----------------------------
+$body-font-size: 16px;
+$body-font-weight: 400;
+$body-line-height: 1.667;
+
+// Links
+$color-link: $color-accent-primary;
+$color-link-hover: $color-accent-primary;
+
+$color-link-darkbg: $color-accent-secondary;
+$color-link-darkbg-hover: darken($color-link-darkbg, 15%);
+
+$color-link-secondary: $color-accent-secondary;
+
+// Buttons
+$button-background: $color-accent-secondary;
+$button-border: none;
+$button-border-radius: 5px;
+$button-color: #000;
+$button-font-size: 24px;
+$button-font-weight: 800;
+$button-font-family: $font-stack-secondary;
+$button-padding-x: 24px;
+$button-padding-y: 15px;
+$button-letter-spacing: 0.12em;
+
+// Buttons Hover
+$button-hover-color: #fff;
+$button-hover-background: $color-accent-primary;
+$button-hover-border: none;
+
+// Dark Buttons
+$button-dark-background: $color-accent-secondary;
+$button-dark-border: none;
+$button-dark-color: $color-text-darkbg;
+
+// Dark Buttons Hover
+$button-dark-hover-background: #fff;
+$button-dark-hover-border: none;
+$button-dark-hover-color: $color-accent-primary;
+
+// Overlays
+$overlay-color: #000;
+$overlay-opacity: 0.65;
+
+// Header
+//-----------------------------
+$header-bg: #fff;
+$header-bg-affixed: $header-bg;
+
+// Footer
+//-----------------------------
+$footer-bg: $color-accent-secondary;
+$footer-color: #000;
+
+$footer-dark: true;
+$footer-dark-bg: #000;
+
+// Accordion
+//-----------------------------
+$accordion-icon-color: darken($color-neutral, 50%);
+$accordion-icon-color-active: $accordion-icon-color;
+
+$accordion-icon-bg-color: $color-accent-secondary;
+$accordion-icon-bg-color-active: $accordion-icon-bg-color;
+
+$accordion-btn-icon: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Group 1414'%3E%3Cellipse id='Ellipse 40' cx='13.5' cy='13.5' rx='13.5' ry='13.5' transform='rotate(90 13.5 13.5)' fill='#{$accordion-icon-bg-color}'/%3E%3Cpath id='Vector 11' d='M19 11L13.5 17L8 11' stroke='#{$accordion-icon-color}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E%0A");
+$accordion-btn-icon-active: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Group 1414'%3E%3Cellipse id='Ellipse 40' cx='13.5' cy='13.5' rx='13.5' ry='13.5' transform='rotate(90 13.5 13.5)' fill='#{$accordion-icon-bg-color-active}'/%3E%3Cpath id='Vector 11' d='M19 11L13.5 17L8 11' stroke='#{$accordion-icon-color-active}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E%0A");

@@ -1,0 +1,119 @@
+.row-split-callout {
+	margin: 30px 0;
+
+	.row {
+		// Text on left image on right
+		&.full-width-right {
+			position: relative;
+
+			.content-block {
+				position: absolute;
+				position: relative;
+				left: 75px;
+				margin: 60px 0 !important;
+				padding-top: 100px;
+				padding-bottom: 100px;
+				width: calc(50% + 60px);
+				transition: padding-right 0.3s ease-in-out;
+				transition: width 0.3s ease-in-out;
+
+				.content-body {
+					padding-right: 15px;
+					padding-left: 15px;
+				}
+				@include media-breakpoint-up(sm) {
+					padding-right: calc((100% - 576px) / 2);
+				}
+
+				@include media-breakpoint-down(md) {
+					left: 50%;
+					transform: translateX(-50%);
+					padding: 50px 15px;
+					width: calc(100% - 30px);
+				}
+
+				@include media-breakpoint-down(lg) {
+					padding-right: 15px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					padding-right: 60px;
+					padding-left: 60px;
+				}
+			}
+
+			.content-block ~ .col-lg-6 {
+				z-index: -100;
+				position: absolute;
+				right: 0;
+				height: 100%;
+				width: calc(50% + 15px);
+
+				transition: width 0.3s ease-in-out;
+				@include media-breakpoint-down(lg) {
+					width: 70%;
+				}
+
+				@include media-breakpoint-down(md) {
+					width: 100%;
+				}
+			}
+		}
+
+		// Adds appropriate padding for text when image is on left
+		&.flex-row-reverse.full-width-left {
+			position: relative;
+
+			.content-block {
+				position: relative;
+				right: 75px;
+				margin: 60px 0 !important;
+				padding-top: 100px;
+				padding-bottom: 100px;
+				width: calc(50% + 60px);
+				transition: padding-left 0.3s ease-in-out;
+				transition: width 0.3s ease-in-out;
+
+				.content-body {
+					padding-right: 15px;
+					padding-left: 15px;
+				}
+				@include media-breakpoint-up(sm) {
+					padding-left: calc((100% - 576px) / 2);
+				}
+
+				@include media-breakpoint-down(md) {
+					right: 50%;
+					transform: translateX(50%);
+					padding: 50px 15px;
+					width: calc(100% - 30px);
+				}
+
+				@include media-breakpoint-down(lg) {
+					padding-left: 15px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					padding-right: 60px;
+					padding-left: 60px;
+				}
+			}
+
+			.content-block ~ .col-lg-6 {
+				z-index: -100;
+				position: absolute;
+				left: 0;
+				height: 100%;
+				width: calc(50% + 15px);
+				transition: width 0.3s ease-in-out;
+				@include media-breakpoint-down(lg) {
+					width: 70%;
+				}
+
+				@include media-breakpoint-down(md) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.row-featured-lead-cta {
+	.cta-callout-text,
+	.cta-callout-text * {
+		font-size: $h4-font-size !important;
+		line-height: 1.2;
+		font-weight: 800;
+	}
+	.btn-container {
+		min-width: 320px;
+		.btn {
+			display: block;
+			max-width: 400px;
+			width: 100%;
+		}
+	}
+	.btn {
+		border-radius: 5px;
+		padding: 1rem 2rem;
+		height: unset !important;
+
+		& + .btn__sub-cta {
+			margin-top: 1rem;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		* {
+			margin: 0 auto;
+		}
+
+		.cta-callout-text,
+		.content {
+			color: unset !important;
+			text-align: center;
+		}
+
+		.btn {
+			max-width: 400px;
+		}
+	}
+}

@@ -1,0 +1,311 @@
+.row-featured-image {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #ccc;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	overflow: hidden;
+
+	.position-wrapper {
+		position: absolute;
+		display: flex;
+		height: 100%;
+		width: 100%;
+
+		@media only screen and (max-width: 991px) {
+			position: relative;
+		}
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media only screen and (max-width: 991px) {
+			--bs-gutter-x: 0;
+			margin: 0;
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+		max-height: 500px;
+		width: 100%;
+
+		img,
+		picture {
+			display: flex;
+			flex-grow: 1;
+			height: auto;
+			max-width: unset;
+			max-width: 100vw;
+			width: 100vw;
+			-o-object-fit: cover;
+			object-fit: cover;
+
+			@media only screen and (max-width: 767px) {
+				// min-height:215px;
+				aspect-ratio: 790 / 246;
+			}
+
+			@media only screen and (min-width: 992px) {
+				// min-height:396px;
+				// aspect-ratio: 1440 / 357;
+				aspect-ratio: 790 / 246;
+			}
+
+			@media only screen and (min-width: 1600px) {
+				// min-height:396px;
+				// aspect-ratio: 2650 / 714;
+			}
+		}
+
+		img {
+			overflow: hidden;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		h1,
+		.page-title {
+			margin: 0;
+			padding: 2rem;
+			background: rgba(255, 255, 255, 0.7);
+			background-image: url("../static-assets/ld/bg/ld-pattern-1.webp");
+			font-weight: 900;
+			text-align: center;
+		}
+
+		@media only screen and (max-width: 991px) {
+			display: block !important;
+			// min-height: 100px;
+			width: 100%;
+
+			h1,
+			.page-title {
+				margin: 0;
+				// padding: 1rem;
+				width: 100%;
+				font-size: 28px;
+				font-weight: 900;
+				text-align: center;
+			}
+		}
+
+		@media only screen and (min-width: 992px) and (max-width: 1199px) {
+			padding: 2.5rem;
+		}
+
+		@media only screen and (min-width: 992px) {
+			min-width: 700px;
+		}
+
+		@media only screen and (min-width: 1200px) {
+			padding: 2.5rem;
+			max-width: 90%;
+		}
+	}
+
+	&.overlay {
+		&::before {
+			z-index: 0;
+			background-color: rgba(0, 0, 0, 0.55);
+		}
+	}
+
+	&--hero {
+		// min-height: 570px;
+
+		.row-featured-image__image {
+			max-height: unset !important;
+
+			img {
+				min-height: 570px;
+				height: auto;
+				width: 100%;
+				-o-object-fit: cover !important;
+				object-fit: cover !important;
+			}
+		}
+
+		.position-wrapper {
+			position: absolute;
+
+			.title {
+				margin-bottom: 36px;
+				text-transform: uppercase !important;
+				font-style: normal;
+				/* H4: Bold */
+				font-family: Mulish;
+				font-size: 26px;
+				line-height: 30px;
+				/* 115.385% */
+				font-weight: bold;
+				color: #000;
+			}
+
+			.subtitle {
+				margin-bottom: 36px !important;
+				text-transform: uppercase;
+				letter-spacing: 0.3px;
+				font-style: normal;
+				font-family: Mulish;
+				font-size: 50px;
+				line-height: 62px;
+				/* 124% */
+				font-weight: 900;
+				color: #000;
+			}
+
+			.content,
+			.content * {
+				letter-spacing: 0.3px;
+				font-style: normal;
+				font-family: Mulish;
+				font-size: 20px;
+				line-height: 24px;
+				/* 120% */
+				font-weight: bold;
+				color: #000;
+			}
+
+			.hero-cta {
+				margin-top: 36px !important;
+				line-height: 23px !important;
+			}
+		}
+
+		@media only screen and (max-width: 991px) {
+			.row-featured-image__image {
+				position: relative;
+				min-height: 570px;
+				height: auto;
+				// height: calc(100vh - 100px);
+				background-image: url("../img/hero-ld-logo.webp");
+				background-color: $color-accent-secondary;
+				background-position: bottom right;
+				background-repeat: no-repeat;
+
+				img {
+					display: none;
+				}
+			}
+
+			.position-wrapper {
+				// position: relative;
+				padding: 0 1rem;
+
+				.title {
+					margin-bottom: 2px !important;
+					text-transform: uppercase;
+					letter-spacing: 0.3px;
+					font-style: normal;
+					font-family: Mulish;
+					font-size: 20px;
+					line-height: 24px;
+					/* 120% */
+					font-weight: 800;
+					color: #000 !important;
+				}
+
+				.subtitle {
+					margin-bottom: 36px !important;
+					text-transform: uppercase;
+					letter-spacing: 0.3px;
+					font-style: normal;
+					font-family: Mulish;
+					font-size: 30px;
+					line-height: normal;
+					font-weight: 1000;
+					color: #000 !important;
+				}
+
+				.content {
+					margin-bottom: 36px !important;
+					letter-spacing: 0.3px;
+					font-style: normal;
+					font-family: Mulish;
+					font-size: 20px;
+					line-height: 24px;
+					/* 120% */
+					font-weight: 800;
+					color: #000 !important;
+
+					p,
+					strong,
+					& > * {
+						font-weight: bold !important;
+						color: #000 !important;
+					}
+				}
+
+				.btn.btn-secondary.hero-cta {
+					justify-content: center;
+					align-items: center;
+					margin-top: 36px;
+					padding: 1rem 2rem;
+					height: 50px;
+					max-width: 400px;
+					background-image: url("../img/icon-button-bg.webp");
+					background-color: #000;
+					background-position: right;
+					background-repeat: no-repeat;
+					text-transform: uppercase;
+					line-height: 22px !important;
+					color: #fff !important;
+
+					@include media-breakpoint-down(lg) {
+						background-color: $color-accent-primary !important;
+
+						&:hover,
+						&:focus,
+						&:active {
+							color: $color-accent-secondary !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 991px) {
+		flex-direction: column;
+	}
+}
+
+.row-featured-image--hero {
+	a.btn {
+		&__hero-cta,
+		&__hero-cta * {
+			color: #000 !important;
+		}
+	}
+}
+
+section.dark:not(.no-dark) {
+	.btn__hero-cta {
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: darken($color-accent-secondary, 10%) !important;
+			color: #000 !important;
+		}
+	}
+}

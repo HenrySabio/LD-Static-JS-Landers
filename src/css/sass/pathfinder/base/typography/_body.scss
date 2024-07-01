@@ -1,0 +1,58 @@
+p {
+	margin-bottom: 1.5em;
+	&:last-child:not(:last-child + *) {
+		margin-bottom: 0;
+	}
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	max-width: 100%;
+	background: #eee;
+	overflow: auto;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+.text-bold {
+	font-weight: 900;
+}

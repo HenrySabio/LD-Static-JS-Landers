@@ -1,0 +1,65 @@
+h1,
+.heading--h1 {
+	text-transform: $h1-transform;
+	font-size: $h1-size;
+	font-weight: $h1-font-weight;
+	color: $h1-color;
+	&.heading--medium {
+		font-weight: $h1-font-weight - 400;
+	}
+}
+
+h2,
+.heading--h2 {
+	text-transform: $h2-transform;
+	font-size: $h2-size;
+	font-weight: $h2-font-weight;
+	color: $h2-color;
+	&.heading--medium {
+		font-weight: $h2-font-weight - 400;
+	}
+}
+
+h3,
+.heading--h3 {
+	text-transform: $h3-transform;
+	font-size: $h3-size;
+	font-weight: $h3-font-weight;
+	color: $h3-color;
+	&.heading--medium {
+		font-weight: $h3-font-weight - 400;
+	}
+}
+
+h4,
+.heading--h4 {
+	text-transform: $h4-transform;
+	font-size: $h4-size;
+	font-weight: $h4-font-weight;
+	color: $h4-color;
+	&.heading--medium {
+		font-weight: $h4-font-weight - 300;
+	}
+}
+
+h5,
+.heading--h5 {
+	text-transform: $h5-transform;
+	font-size: $h5-size;
+	font-weight: $h5-font-weight;
+	color: $h5-color;
+	&.heading--medium {
+		font-weight: $h5-font-weight - 300;
+	}
+}
+
+h6,
+.heading--h6 {
+	text-transform: $h6-transform;
+	font-size: $h6-size;
+	font-weight: $h6-font-weight;
+	color: $h6-color;
+	&.heading--medium {
+		font-weight: $h6-font-weight - 200;
+	}
+}

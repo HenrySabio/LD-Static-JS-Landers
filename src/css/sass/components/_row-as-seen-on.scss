@@ -1,0 +1,18 @@
+.as-seen-on {
+	&__iframe {
+		padding-bottom: 2rem;
+	}
+
+	&__icons {
+		@media only screen and (max-width: 992px) {
+			flex-direction: row !important;
+			.channel {
+				max-height: 80%;
+				max-width: 80%;
+			}
+			& > .row {
+				flex-direction: row !important;
+			}
+		}
+	}
+}

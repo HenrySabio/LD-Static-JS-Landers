@@ -1,0 +1,41 @@
+@import "./fonts";
+@import "./headings";
+@import "./body";
+
+.disclaimer,
+.disclaimer p {
+	margin-bottom: 1rem;
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+}
+
+*,
+.dark,
+.dark:not(.no-dark) {
+	span.callout {
+		&__text-primary {
+			color: $color-accent-primary !important;
+		}
+
+		&__text-secondary {
+			color: $color-accent-secondary !important;
+		}
+
+		&__text-tertiary {
+			color: $color-accent-tertiary !important;
+		}
+	}
+}
+
+.inline-link-group {
+	margin-bottom: 1rem;
+
+	.inline-link:not(:last-of-type) {
+		padding-right: 0;
+
+		&:after {
+			content: "|";
+			margin-left: 0.75rem;
+		}
+	}
+}

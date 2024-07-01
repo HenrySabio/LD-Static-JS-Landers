@@ -1,0 +1,137 @@
+.main-navigation {
+	display: block;
+	width: 100%;
+
+	ul {
+		display: none;
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+
+		ul {
+			z-index: 99999;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			float: left;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+			ul {
+				top: 0;
+				left: -999em;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: auto;
+					display: block;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		position: relative;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	.site-main & {
+		margin: 0 0 1.5em;
+	}
+
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+		text-align: end;
+		flex: 1 0 50%;
+	}
+}
+
+.navigation.pagination {
+	.nav-links {
+		display: flex;
+		height: 30px;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		font-style: normal;
+		/* H5: Bold */
+		font-family: Mulish;
+		font-size: 20px;
+		line-height: 30px; /* 120% */
+		font-weight: 800;
+		color: #000;
+		text-align: center;
+
+		a {
+			margin: 0 16px;
+			height: 30px;
+			text-decoration: none;
+			color: #000 !important;
+
+			svg {
+				height: 30px;
+			}
+
+			span {
+				&:hover {
+					border-radius: 50%;
+					height: 30px;
+					width: 30px;
+					background: $color-gray;
+				}
+			}
+		}
+
+		span.current {
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			margin: 0 16px;
+			height: 30px;
+			width: 30px;
+			background: #e9a936;
+		}
+	}
+}
+// End: Navigation Pagination

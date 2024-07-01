@@ -1,0 +1,125 @@
+.lander {
+	.overlay:before {
+		opacity: 0.6 !important;
+	}
+
+	a.btn {
+		display: block !important;
+		border-radius: 5px !important;
+		padding: 10px 20px !important;
+
+		p {
+			display: block !important;
+		}
+
+		*:last-child {
+			margin-top: 10px !important;
+		}
+
+		& ~ .btn {
+			margin-top: 15px !important;
+		}
+	}
+
+	img.badge-icon {
+		max-height: 90px !important;
+	}
+
+	img.icon {
+		max-height: 64px !important;
+		max-width: 64px !important;
+
+		& ~ *:is(h1, h2, h3, h4, h5, h6) {
+			margin-top: 30px;
+		}
+	}
+
+	// Accordions
+	.accordion {
+		.accordion-item {
+			border: none;
+			margin-top: 15px;
+			background-color: transparent;
+
+			.accordion-body {
+				font-size: 0.85rem;
+				text-align: left;
+			}
+		}
+
+		.accordion-header .accordion-button {
+			background-color: darken($color-neutral, 5%);
+			font-size: 1.1rem;
+
+			&:focus {
+				box-shadow: 0 0 0 0.25rem rgba($color-accent-secondary, 0.25);
+			}
+
+			&:not(.collapsed) {
+				background-color: darken($color-neutral, 10%);
+				color: initial;
+			}
+		}
+
+		&:first-of-type,
+		&:first-of-type .accordion-button {
+			border-radius: 0;
+		}
+	}
+
+	.client-reviews {
+		.content-box {
+			border-radius: 5px;
+			padding: 30px;
+			background-color: #fff;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+			.rating {
+				img {
+					max-width: 115px;
+				}
+			}
+
+			.client-review,
+			.author {
+				margin-top: 15px;
+			}
+		}
+	}
+
+	section.featured-icon-row,
+	section.accordion-row {
+		.row {
+			&[class*="bg--"] {
+				border-radius: 25px;
+				padding-top: 75px;
+				padding-bottom: 75px;
+				@include media-breakpoint-down(lg) {
+					padding: 75px 30px !important;
+				}
+				@include media-breakpoint-down(sm) {
+					border-radius: 10px;
+				}
+			}
+		}
+		@include media-breakpoint-down(lg) {
+			&[class*="module"] {
+				padding-top: 15px !important;
+				padding-bottom: 15px !important;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		main {
+			padding-top: 87px;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		section.module {
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+	}
+}

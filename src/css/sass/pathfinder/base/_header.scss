@@ -1,0 +1,77 @@
+// Start: Site Header
+header,
+.header {
+	z-index: 99995;
+	position: fixed;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	background: #fff;
+	font-family: Mulish, sans-serif !important;
+	transition: all 0.2s ease-out;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	// End: header__buttons
+
+	&.lander-nav {
+		img.nav__logo {
+			max-height: 50px;
+		}
+
+		> .container,
+		> .container nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		> .container {
+			@media (min-width: 576px) and (max-width: 767.98px) {
+				min-width: 100%;
+			}
+		}
+
+		> .container nav {
+			padding: 0 20px;
+			padding: 20px 15px;
+			min-height: 88px;
+			height: 100%;
+			text-transform: uppercase;
+			font-size: 1rem;
+			font-weight: 400;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			&,
+			& * {
+				transition: all 0.2s ease-in-out;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 991px) {
+		position: sticky;
+		top: 0;
+	}
+
+	@media only screen and (max-width: 991px) {
+		max-height: unset;
+		min-height: unset;
+		height: 64px;
+	}
+
+	@media only screen and (min-width: 992px) {
+		max-height: unset;
+		min-height: 88px;
+		min-height: unset;
+		height: 88px;
+	}
+}
+
+// End: Site Header

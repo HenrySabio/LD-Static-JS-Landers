@@ -1,0 +1,59 @@
+.row-content-columns {
+	h2 {
+		margin: 2rem 0;
+	}
+
+	.card {
+		display: flex;
+		justify-content: flex-start;
+		padding: 15px 0;
+
+		.card-body {
+			.card-title {
+				margin-bottom: 2rem !important;
+				text-transform: uppercase !important;
+				letter-spacing: 0.3px !important;
+				font-style: normal !important;
+				font-size: 20px !important;
+				line-height: 24px !important; /* 120% */
+				font-weight: bold !important;
+			}
+			@media only screen and (min-width: 992px) {
+				margin-top: 2rem;
+				padding-left: 0;
+			}
+		}
+
+		.card-icon {
+			display: flex;
+			justify-content: center;
+			max-height: 100px;
+			height: 100px;
+			-o-object-fit: contain;
+			object-fit: contain;
+
+			@media only screen and (max-width: 991px) {
+				margin: 0 auto !important;
+			}
+		}
+
+		&.match-height {
+			@media only screen and (max-width: 991px) {
+				height: auto !important;
+			}
+		}
+	}
+
+	&.scholarship {
+		.card .card-body .card-title {
+			text-transform: capitalize !important;
+			font-style: normal !important;
+			font-family: Mulish !important;
+			font-size: 16px !important;
+			line-height: 23px !important; /* 143.75% */
+			font-weight: 900 !important;
+			color: #000 !important;
+			text-align: center !important;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.row-default {
+	h2 {
+		margin: 2rem 0;
+		font-style: normal;
+		font-family: Mulish;
+		font-size: 38px;
+		line-height: 50px; /* 131.579% */
+		font-weight: 900;
+	}
+
+	* {
+		:last-child {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.dark {
+		h2,
+		p {
+			color: #fff !important;
+		}
+	}
+}

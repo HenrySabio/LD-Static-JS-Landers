@@ -1,0 +1,60 @@
+.row-split-block .row {
+	// Text on left image on right
+	&.full-width-right .module {
+		.content-body {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		@include media-breakpoint-up(sm) {
+			padding-left: calc((100% - 576px) / 2);
+		}
+
+		@include media-breakpoint-up(md) {
+			padding-left: calc((100% - 720px) / 2);
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-left: calc((100% - 991px) / 2);
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-left: calc((100% - 1140px) / 2);
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding-left: calc((100% - 1320px) / 2);
+		}
+	}
+	// Adds appropriate padding for text when image is on left
+	&.flex-row-reverse.full-width-left .module {
+		.content-body {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		@include media-breakpoint-up(sm) {
+			padding-right: calc((100% - 576px) / 2);
+			padding-left: calc((100% - 576px) / 2);
+		}
+
+		@include media-breakpoint-up(md) {
+			padding-right: calc((100% - 720px) / 2);
+			padding-left: calc((100% - 720px) / 2);
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-right: calc((100% - 991px) / 2);
+			padding-left: 60px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-right: calc((100% - 1140px) / 2);
+			padding-left: 60px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding-right: calc((100% - 1320px) / 2);
+		}
+	}
+}
+
+// list max-width for .container at all breakpoints

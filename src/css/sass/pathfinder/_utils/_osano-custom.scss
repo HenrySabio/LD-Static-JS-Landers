@@ -1,0 +1,26 @@
+// Osano Cookie Consent styles
+
+// Hide osano cookie consent widget icon
+button {
+	&.osano-cm-window__widget,
+	&.osano-cm-widget,
+	&.osano-cm-widget--position_right,
+	&.osano-cm-window__widget.osano-cm-widget.osano-cm-widget--position_right {
+		display: none !important;
+	}
+}
+
+// Hide osano disclaimer and show button if not in use (managed by js)
+#osano_manage {
+	&:not(.show) {
+		display: none;
+	}
+}
+
+.osano-cm-dialog--hidden {
+	pointer-events: none !important;
+}
+
+.osano-cm-dialog--hidden {
+	display: none !important;
+}

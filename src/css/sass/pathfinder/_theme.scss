@@ -1,0 +1,471 @@
+@import "./base/accessibility";
+@import "./base/typography/typography";
+@import "./base/header";
+@import "./base/landers";
+
+// Hides elements - leaves viewable for screen readers
+// Accessibility utility
+.sr-only {
+	position: absolute;
+	border: 0;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
+
+body {
+	font-family: $font-stack-primary;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	font-weight: $body-font-weight;
+	color: $color-text;
+}
+
+/* Imagify Picture Element Bug Fix
+ * -----------------------------------
+ *
+ * When Imagify has img to picture element conversion enabled,
+ * it strips the class attribute from the img tag and adds it to the picture element that surrounds it.
+ * 
+ * This causes the img tag to lose its class attribute and any styles applied to it.
+ * This may cause issues with the layout of the site for any classes that specifically target img tags.
+ * Below are current workarounds to ensure the classes continue to be applied to the img tag.
+ *
+ * NOTICE: For now this is primarily intended for Bootstrap specific classes.
+ *
+ */
+
+picture {
+	&.img-fluid {
+		img {
+			@extend .img-fluid;
+		}
+	}
+}
+
+// END: Imagify Picture Element Bug Fix
+
+img,
+picture,
+picture img {
+	height: auto;
+	max-width: 100%;
+}
+
+// Buttons
+// --------------------------------------------------
+.btn {
+	display: flex;
+	border: $button-border;
+	border-radius: $button-border-radius;
+	background-color: $button-background;
+	font-size: $button-font-size;
+	line-height: 23px;
+	font-weight: $button-font-weight;
+	color: $button-color;
+	transition:
+		color 0.15s ease-in-out,
+		background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out !important;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border: $button-hover-border;
+		background-color: $button-hover-background;
+		color: $button-hover-color !important;
+		transition:
+			color 0.15s ease-in-out,
+			background-color 0.15s ease-in-out,
+			border-color 0.15s ease-in-out,
+			box-shadow 0.15s ease-in-out !important;
+	}
+
+	&.btn-primary {
+		justify-content: center;
+		align-items: center;
+		padding: 1rem 3rem;
+		height: 50px;
+		max-width: 400px;
+		background-image: url("../img/icon-button-bg.webp");
+		background-color: $color-accent-primary !important;
+		background-position: right;
+		background-repeat: no-repeat;
+		text-transform: uppercase;
+		color: $color-accent-secondary !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: $color-accent-secondary !important;
+			color: $color-accent-primary !important;
+		}
+	}
+
+	&.btn-secondary {
+		justify-content: center;
+		align-items: center;
+		padding: 1rem 3rem;
+		height: 50px;
+		max-width: 400px;
+		background-image: url("../img/icon-button-bg.webp");
+		background-color: $color-accent-secondary !important;
+		background-position: right;
+		background-repeat: no-repeat;
+		text-transform: uppercase;
+		color: $color-accent-primary !important;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: $color-accent-primary !important;
+			color: $color-accent-secondary !important;
+		}
+	}
+
+	&.btn-cta {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 25px;
+		padding: 1rem 3rem;
+		height: 50px;
+		background: url("../img/icon-button-bg.webp");
+		background-color: $color-accent-primary !important;
+		background-position: right;
+		background-repeat: no-repeat;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 18px;
+		line-height: 1;
+		font-weight: bold;
+		color: $color-white !important;
+		transition: color 0.3s ease-in-out;
+		text-align: center;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #ccc;
+		}
+	}
+
+	&.btn__sub-cta {
+		border: solid 1px #fff !important;
+		background-color: transparent !important;
+		font-size: 1rem;
+		font-weight: 400;
+		color: #fff;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: #fff !important;
+			color: #000 !important;
+		}
+	}
+
+	&__cta-subtext {
+		position: relative;
+		margin: 0 0 5px 0;
+		text-transform: none;
+		font-size: 1rem;
+		font-weight: 400;
+		color: inherit;
+	}
+}
+
+// Sections
+.module {
+	padding: 6rem 0;
+
+	&--50 {
+		padding: 3rem 0;
+	}
+
+	&.no-padding {
+		padding: 0;
+	}
+
+	&.no-padding-top {
+		padding-top: 0;
+	}
+
+	&.no-padding-bottom {
+		padding-bottom: 0;
+	}
+}
+
+.styled-border-radius {
+	border: 1px solid #ebebeb;
+	border-top-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+// Backgrounds - General
+// --------------------------------------------------
+.bg {
+	background-color: #333;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&--color-primary {
+		background-color: $color-accent-primary;
+	}
+
+	&--color-secondary {
+		background-color: $color-accent-secondary;
+	}
+
+	&--color-white {
+		background-color: $color-white;
+	}
+
+	&--color-neutral {
+		background-color: $color-neutral;
+	}
+
+	&--color-gray {
+		background-color: $color-gray;
+	}
+
+	&--dark-mustard {
+		background-color: #b97429 !important;
+		color: #fff !important;
+	}
+
+	&--color-black {
+		background-color: black !important;
+		color: #fff !important;
+	}
+
+	&--image {
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&--pattern-1 {
+		background-image: url("../static-assets/ld/bg/ld-pattern-1.webp");
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&--pattern-2 {
+		background-image: url("../static-assets/ld/bg/ld-pattern-2.webp");
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&--pattern-3 {
+		background-image: url("../static-assets/ld/bg/ld-pattern-3.webp");
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&--pattern-4 {
+		background-image: url("../static-assets/ld/bg/ld-pattern-4.webp");
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&--car-accident {
+		background-image: url("../img/hero-car-accident-scene.webp");
+	}
+
+	&--money-wallet {
+		background-image: url("../img/bg-moneywallet--2x.webp");
+	}
+}
+
+// Backgrounds - Dark
+// --------------------------------------------------
+.dark:not(.no-dark) {
+	* {
+		color: $color-text-darkbg !important;
+	}
+
+	a {
+		// color: $color-link-darkbg !important;
+		transition:
+			color 0.2s,
+			text-decoration-color 0.2s ease-in-out;
+		// text-decoration-color: $color-link-darkbg;
+
+		&:hover,
+		&:focus,
+		&:active {
+			// color: $color-link-darkbg-hover !important;
+			text-decoration-color: transparent;
+		}
+	}
+
+	.btn {
+		border: $button-dark-border;
+		background-color: $button-dark-background;
+		color: $button-dark-color;
+
+		&:hover,
+		&:focus,
+		&:active {
+			border: $button-dark-hover-border;
+			background-color: $button-dark-hover-background;
+			color: $button-dark-hover-color;
+		}
+	}
+}
+
+.dark.no-dark {
+	color: $color-text;
+}
+
+// Overlays - For modules or elements with a background image
+// --------------------------------------------------
+
+.overlay:not(.no-overlay) {
+	z-index: 1;
+	position: relative;
+
+	&:before {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: $overlay-opacity;
+		height: 100%;
+		width: 100%;
+		background-color: $overlay-color;
+	}
+
+	&.overlay-neutral:before {
+		background-color: $color-neutral;
+	}
+
+	&.overlay-light {
+		&:before {
+			opacity: 0.5;
+			background-color: #fff;
+		}
+	}
+
+	&.overlay--gradient-left {
+		&:before {
+			background: linear-gradient(
+				to right,
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0)
+			);
+			// -webkit-backdrop-filter: blur(10px);
+			// backdrop-filter: blur(10px);
+		}
+	}
+}
+
+// Bordered Images
+
+.has-bordered-images {
+	.bordered-image-wrapper {
+		$radius: 30px;
+		$padding: 10px;
+		$nested-radius: $radius - $padding;
+		position: relative;
+		margin: 0 auto;
+		max-width: 320px;
+		width: -moz-fit-content;
+		width: fit-content;
+
+		img {
+			position: relative;
+			border-radius: $nested-radius 0;
+			box-shadow: 6px 7px 23px -5px rgba(0, 0, 0, 0.48);
+		}
+
+		&,
+		&:before {
+			border-radius: $radius 0;
+		}
+
+		&:before {
+			content: "";
+			z-index: -1;
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			height: 100%;
+			max-width: 320px;
+			width: 100%;
+			background-color: $color-accent-secondary;
+			/* Adjust border-radius as needed */
+		}
+	}
+}
+
+// Accordions
+
+.accordion-flush {
+	.accordion-item {
+		border: 1px solid $color-neutral !important;
+		border-bottom: none;
+
+		.accordion-button:not(.collapsed) {
+			background-color: unset;
+			color: unset;
+			box-shadow: none;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid $color-neutral;
+		}
+	}
+}
+
+// Footer
+// --------------------------------------------------
+footer.footer {
+	background-color: $footer-bg;
+	font-size: 0.75rem;
+
+	// if footer-dark is true add dark class to footer element
+	@if $footer-dark {
+		background-color: $footer-dark-bg;
+		@extend .dark;
+	}
+}
+
+main,
+article {
+	section.post-header {
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		.stacked-bg {
+			min-height: 150px;
+		}
+	}
+}
+
+// Fixed Scroll CTA
+.fixed-scroll-cta {
+	z-index: 1000;
+	position: fixed;
+	bottom: -100px;
+	/* Initially hidden */
+	left: 0;
+	padding: 10px 0;
+	width: 100%;
+	background-color: $color-accent-quadrary;
+	font-size: 24px;
+	font-weight: 800;
+	color: #fff;
+	transition: bottom 0.3s ease;
+}

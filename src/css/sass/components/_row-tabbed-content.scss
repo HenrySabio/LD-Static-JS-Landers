@@ -1,0 +1,59 @@
+.row-tabbed-content {
+	.nav.nav-tabs {
+		border-bottom: none;
+
+		.nav-link {
+			position: relative;
+			border-top: none !important;
+			border-right: $color-neutral 1px solid !important;
+			border-left: $color-neutral 1px solid !important;
+			border-radius: 0 !important;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				right: 0;
+				height: 0px;
+				background-color: $color-theme-dark-blue;
+				transition: height 0.3s ease-in-out;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				border-top: none !important;
+				border-right: $color-neutral 1px solid !important;
+				border-bottom: none !important;
+				border-left: $color-neutral 1px solid !important;
+				border-radius: 0 !important;
+				&::after {
+					height: 5px;
+				}
+			}
+
+			&.active {
+				border-top: transparent 5px solid;
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: -5px;
+					left: 0;
+					right: 0;
+					height: 5px;
+					background-color: $color-theme-dark-blue;
+					transition: height 0.3s ease-in-out;
+				}
+			}
+		}
+	}
+
+	&.has-bordered-images {
+		@include media-breakpoint-down(lg) {
+			.tab-pane .bordered-image-wrapper {
+				margin-top: 40px;
+				margin-left: 0 !important;
+			}
+		}
+	}
+}

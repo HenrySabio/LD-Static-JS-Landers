@@ -1,0 +1,48 @@
+/*  Bootstrap Variable Overrides
+*   ----------------------------
+*
+*   This file is used to map bootstrap variables to Pathfinder Template Variables
+*   Ideally - you should only need to edit this file to map variables that do not exist in Pathfinder Template Variables
+*   This is to prevent unnecessary overrides in custom styles section or creating styles that already exist in via bootstrap
+*
+*   Usage:
+*   ----------------------------
+*   $bootstrap_variable: $pathfinder_variable;
+*
+*/
+
+// Global Colors
+//-----------------------------
+
+$primary: $color-accent-primary;
+$secondary: $color-accent-secondary;
+$success: $color-accent-success;
+$info: $color-accent-tertiary;
+// $warning:       $color-accent-warning;
+// $danger:        $color-accent-danger;
+// $light:         $color-neutral;
+// $dark:          $color-text;
+
+// Typography - Headings
+//-----------------------------
+
+$h1-font-size: $h1-size;
+$h2-font-size: $h2-size;
+$h3-font-size: $h3-size;
+$h4-font-size: $h4-size;
+$h5-font-size: $h5-size;
+$h6-font-size: $h6-size;
+
+// Buttons
+//-----------------------------
+
+$btn-color: $button-color;
+$btn-bg: $button-background;
+$btn-border-radius: $button-border-radius;
+$btn-padding-x: $button-padding-x;
+$btn-padding-y: $button-padding-y;
+
+// Accordion
+//-----------------------------
+$accordion-button-icon: $accordion-btn-icon;
+$accordion-button-active-icon: $accordion-btn-icon-active;

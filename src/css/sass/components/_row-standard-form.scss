@@ -1,0 +1,60 @@
+form.standard-contact-form {
+	margin-top: 40px;
+
+	div.form-item,
+	fieldset {
+		max-height: 95px;
+		overflow: hidden;
+		transition: max-height 0.75s ease-in-out;
+
+		label {
+			font-weight: 700;
+		}
+
+		label + input,
+		label + select,
+		label + textarea,
+
+		// Fall back for users with injected styles from password managers
+		label + * + input,
+		label + * + select,
+		label + * + textarea {
+			margin-top: 10px;
+		}
+
+		input,
+		select,
+		textarea {
+			display: block;
+			margin-bottom: 15px;
+			width: 100%;
+		}
+
+		span.form-error {
+			display: block;
+			margin-bottom: 15px;
+			font-size: 0.8em;
+			font-weight: 700;
+			color: #f00;
+		}
+		&.form-error {
+			max-height: 1000px;
+		}
+	}
+
+	select {
+		&:after {
+			content: "\f107";
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+
+			font-size: 1.5em;
+		}
+	}
+	&:not(.no-separation) {
+		border-top: solid 1px #ccc;
+		padding-top: 40px;
+	}
+}

@@ -1,0 +1,24 @@
+/** Module Modifiers 
+ *  Modifiers are used to change the appearance of a component or elements within a component
+ *  Modifiers are applied to tthttps://www.1800thelaw2.com/outermost element of a component
+ *  They can be used inside a component if designed to do so - but keep in mind users can only add or remove modifiers from the outermost element - not inner elements - inner element modifiers should be considered permanent.
+
+ *  NOTE: These are the general top level modifiers - please see individual stylesheets for element specific modifiers (e.g. _theme.scss)
+ *  TO-DO: Add `MODIFIER` comment to all modifiers in all stylesheets to make it easier to find them all
+
+---------------------------------------------------------- */
+
+.module {
+	/** All components are wrapped in a module class
+     *  This is to apply standard top level styles to all components (For example all .module elements have a default top/bottom padding of 3rem - see _theme.scss for more examples)
+     *  This is also to allow for component specific styles to be applied when combined with a specific component class -- see individual component style files for examples
+
+    ---------------------------------------------------------- */
+
+	// By default all .card elements have a border - this modifier removes the border
+	&.card__no-border {
+		.card {
+			border: 0;
+		}
+	}
+}

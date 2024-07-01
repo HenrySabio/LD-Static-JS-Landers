@@ -1,0 +1,70 @@
+/* 
+Theme Name: Pathfinder
+Author: Henry Sabio & Enrique Martinez - Design by Lauryn Gomez
+Version: 1.0.1
+Description: Pathfinder is a starter/parent theme to be used as a base for Walker Projects
+*/
+
+// Import Pathfinder Template Variables - variables make lateral changes across entire template
+// To avoid unnecesssary styles, use _bootstrap-var-override.scss to override Bootstrap variables by linking to Pathfinder Template Variables
+@import "variables/vars";
+
+// Import Bootstrap
+@import "vendor/_bootstrap/bootstrap";
+
+// Pathfinder - Base Template Styles
+// Edit where necessary to avoid unnecessary overrides in custom styles section
+@import "pathfinder/theme";
+@import "pathfinder/_utils/utils";
+
+// Pathfinder - Individual Components
+//@import "components/components.scss";
+
+// Custom Styles - Add your custom styles below this line
+// Add css for custom styles specific to this projects theme/brand/design
+
+@include media-breakpoint-down(md) {
+	.row-featured-image--hero {
+		background: darken($color-accent-secondary, 5%) !important;
+		h1.hero__title {
+			font-size: 2.5rem !important;
+			transition: font-size 0.3s ease-in-out;
+		}
+		h1.hero__title,
+		p.hero__subtitle {
+			color: $color-accent-primary !important;
+		}
+
+		.btn__hero-cta {
+			background-color: $color-accent-primary !important;
+			color: $color-accent-secondary !important;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: lighten(
+					$color-accent-secondary,
+					10%
+				) !important;
+				&,
+				* {
+					color: $color-accent-primary !important;
+					transition: color 0.3s ease-in-out;
+				}
+			}
+		}
+
+		.btn__sub-cta {
+			border: 1px solid $color-accent-primary !important;
+			color: $color-accent-primary !important;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $color-accent-primary !important;
+				color: $color-accent-secondary !important;
+			}
+		}
+		&.overlay:before {
+			opacity: 0 !important;
+		}
+	}
+}
