@@ -1,6 +1,0 @@
-[build]
-  publish = "dist"
-  functions = "functions"
-
-[dev]
-  command = "npm start"
