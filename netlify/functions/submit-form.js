@@ -10,7 +10,7 @@ exports.handler = async function (event, context) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
-            body: JSON.stringify(event.body),
+            body: event.body,
         });
 
         const data = await response.json();
