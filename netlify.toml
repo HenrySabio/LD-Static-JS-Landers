@@ -1,2 +1,3 @@
 [build]
-  publish = "dist"  # Path to your built static files
+  functions = "netlify/functions"
+  publish = "dist"
