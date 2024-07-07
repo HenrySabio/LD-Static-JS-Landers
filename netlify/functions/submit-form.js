@@ -19,12 +19,12 @@ exports.handler = async function (event, context) {
         console.log('Webhook Response:', res);
         if (response.status !== 200) {
             return {
-                status: res.status,
-                message: res.statusText
+                status: response.status,
+                message: 'An error occurred while sending the form data to the webhook. Please try again.'
             }
         } else {
             return {
-                status: 200,
+                status: response.status,
                 message: res
             };
         }
