@@ -14,7 +14,6 @@ exports.handler = async function (event, context) {
         });
 
         const res = await response.json();
-        console.log(response);
         console.log(response.status);
         console.log('Webhook Response:', res);
         if (response.status !== 200) {
