@@ -13,19 +13,12 @@ exports.handler = async function (event, context) {
             body: event.body,
         });
 
-        const data = await response.json();
+        const res = await response.json();
         console.log('Webhook Response:', data);
-        console.log(data.ok);
-        console.log(data.body);
-        console.log(data.message);
-        if (!data.ok) {
+        if (!res.ok) {
             return data.status(500).json({ error: 'Failed to forward form data to webhook' });
         } else {
-            const result = data.message; // Replace 'result' with the actual variable containing the message
-            return {
-                status: 200,
-                message: result
-            }
+            return data.status(200).json({ message: res });
         }
     } catch (error) {
         console.log('Error:', error);
