@@ -380,6 +380,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const result = await response.json();
+
+            if (result) {
+                console.log(result);
+                console.log(response);
+                return;
+            }
             const infoCode = response.status;
 
             let status, responseLeadId = '', responseText = '';

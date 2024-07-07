@@ -23,6 +23,7 @@ exports.handler = async function (event, context) {
                 message: 'An error occurred while sending the form data to the webhook. Please try again.'
             }
         } else {
+            console.log('Success');
             return {
                 status: response.status,
                 message: res
