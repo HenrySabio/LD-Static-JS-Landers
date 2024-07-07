@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
             body: event.body
         });
 
-        const data = await response.json();
+        const data = await response;
         console.log('Webhook Response:', data);
         const result = data.message; // Replace 'result' with the actual variable containing the message
         return res.status(200).json({ message: result });
