@@ -16,9 +16,9 @@ exports.handler = async function (event, context) {
         const res = await response.json();
         console.log('Webhook Response:', data);
         if (!res.ok) {
-            return data.status(500).json({ error: 'Failed to forward form data to webhook' });
+            return res.status(500).json({ error: 'Failed to forward form data to webhook' });
         } else {
-            return data.status(200).json({ message: res });
+            return res.status(200).json({ message: res });
         }
     } catch (error) {
         console.log('Error:', error);
