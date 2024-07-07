@@ -30,7 +30,6 @@ exports.handler = async function (event, context) {
                 statusCode: 200,
                 body: JSON.stringify({
                     message: res,
-                    response: res,
                 }),
             };
         }
