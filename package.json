@@ -1,4 +1,6 @@
 {
+  "name": "js-static-landers",
+  "version": "1.0.0",
   "scripts": {
     "build": "gulp prod",
     "start": "npm run build && serve dist"
