@@ -274,7 +274,8 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const url = 'https://api.walkeradvertising.com/api/WebHookGenericPost_v2';
+        // const url = 'https://api.walkeradvertising.com/api/WebHookGenericPost_v2';
+        const url = `${window.location.origin}/submit-form`;
 
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
@@ -375,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify(walkerData),
-                mode: corsMode
             });
 
             const result = await response.json();
@@ -383,15 +383,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let status, responseLeadId = '', responseText = '';
 
-            if (infoCode === 200) {
-                if (result === 'WebhookGenericPost_v2 successfully!') {
+            if (infoCode == 200) {
+                if (result.message === 'WebhookGenericPost_v2 successfully!') {
                     status = 'matched';
                     responseText = 'Success';
                     window.location.href = `${window.location.origin}/confirmation/?status=${status}&injury_cause=${injuryCause}&state=${walkerData.state}&lead=${leadValue}&mediaSourceName=${walkerData.mediaSourceName}&${leadVarQuery}`;
                 } else {
                     status = 'unmatched';
                     responseText = Array.isArray(result) ? result.join(', ') : result;
-                    window.location.href = `${window.location.origin}/confirmation/?status=${status}`;
+                    window.location.href = `${window.location.origin}/confirmation/?status=${status}&message=${result.message}`;
                 }
             } else {
                 status = 'Error';

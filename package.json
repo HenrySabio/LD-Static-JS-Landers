@@ -1,9 +1,9 @@
 {
-  "name": "js-static-landers",
+  "name": "ld-static-js-landers",
   "version": "1.0.0",
   "scripts": {
     "build": "gulp prod",
-    "start": "npm run build && serve dist"
+    "start": "node server.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
@@ -20,7 +20,10 @@
     "postcss-scss": "^4.0.6",
     "postcss-sorting": "^8.0.2",
     "purgecss": "^6.0.0",
-    "sass": "^1.63.4",
-    "serve": "^14.2.3"
+    "sass": "^1.63.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   }
 }
