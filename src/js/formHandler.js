@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // const url = 'https://api.walkeradvertising.com/api/WebHookGenericPost_v2';
         // const url = `${window.location.origin}/submit-form`;
-        const url = '/netlify/functions/submit-form';
+        const url = '/.netlify/functions/submit-form';
 
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
