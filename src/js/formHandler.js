@@ -381,29 +381,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
 
-            if (result) {
-                console.log(result);
-                console.log(response);
+            if (devMode == false) {
+                console.log('result: ', result);
+                console.log('response: ', response);
                 return;
-            }
-            const infoCode = response.status;
-
-            let status, responseLeadId = '', responseText = '';
-
-            if (infoCode == 200) {
-                if (result.message === 'WebhookGenericPost_v2 successfully!') {
-                    status = 'matched';
-                    responseText = 'Success';
-                    window.location.href = `${window.location.origin}/confirmation/?status=${status}&injury_cause=${injuryCause}&state=${walkerData.state}&lead=${leadValue}&mediaSourceName=${walkerData.mediaSourceName}&${leadVarQuery}`;
-                } else {
-                    status = 'unmatched';
-                    responseText = Array.isArray(result) ? result.join(', ') : result;
-                    window.location.href = `${window.location.origin}/confirmation/?status=${status}&message=${result.message}`;
-                }
             } else {
-                status = 'Error';
-                responseText = `${infoCode} - Failed to POST`;
-                window.location.href = `${window.location.origin}/confirmation/?status=${status}&response=${responseText}`;
+                const infoCode = response.status;
+
+                let status, responseLeadId = '', responseText = '';
+
+                if (infoCode == 200) {
+                    if (result.message === 'WebhookGenericPost_v2 successfully!') {
+                        status = 'matched';
+                        responseText = 'Success';
+                        window.location.href = `${window.location.origin}/confirmation/?status=${status}&injury_cause=${injuryCause}&state=${walkerData.state}&lead=${leadValue}&mediaSourceName=${walkerData.mediaSourceName}&${leadVarQuery}`;
+                    } else {
+                        status = 'unmatched';
+                        responseText = Array.isArray(result) ? result.join(', ') : result;
+                        window.location.href = `${window.location.origin}/confirmation/?status=${status}&message=${result.message}`;
+                    }
+                } else {
+                    status = 'Error';
+                    responseText = `${infoCode} - Failed to POST`;
+                    window.location.href = `${window.location.origin}/confirmation/?status=${status}&response=${responseText}`;
+                }
             }
         } catch (error) {
             console.log(error);
