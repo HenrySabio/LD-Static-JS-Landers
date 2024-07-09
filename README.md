@@ -18,9 +18,7 @@ Command: `npm install -g gulp sass`
 
 At root directory, run `npm install` or `npm i` to install all dependencies.
 
-To start local development ensure docker is running and run `docker-compose up -d` to start the local server.
-
-The site will be available at `http://localhost:8080`
+The site can be deployed locally using the `live-server` vscode extension.
 
 Ensure all changes are made in the `src` directory.
 While making changes, run `gulp dev` to watch for changes and compile the files.
