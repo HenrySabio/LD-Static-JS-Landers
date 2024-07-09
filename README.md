@@ -8,7 +8,21 @@ Server side requests are not subject to CORS restrictions.
 As such - ignore existing `server.js` file in the root directory.
 This was used while testing requests using express server and is not used on the deployed site via netlify.
 
-## Deploy
+## Dev & Deploy
 
 These landers are deployed at [staticjs.losdefensores.com](https://staticjs.losdefensores.com)
 Currently host on Netlify.
+
+This workflow requires `gulp` and `sass` to be installed globally.
+Command: `npm install -g gulp sass`
+
+At root directory, run `npm install` or `npm i` to install all dependencies.
+
+To start local development ensure docker is running and run `docker-compose up -d` to start the local server.
+
+The site will be available at `http://localhost:8080`
+
+Ensure all changes are made in the `src` directory.
+While making changes, run `gulp dev` to watch for changes and compile the files.
+
+When ready to commit and push changes to the repo, run `gulp prod` to compile the files into the `dist` directory, commit, and push to the repo.
