@@ -7,3 +7,8 @@ Server side requests are not subject to CORS restrictions.
 
 As such - ignore existing `server.js` file in the root directory.
 This was used while testing requests using express server and is not used on the deployed site via netlify.
+
+## Deploy
+
+These landers are deployed at [staticjs.losdefensores.com](https://staticjs.losdefensores.com)
+Currently host on Netlify.
