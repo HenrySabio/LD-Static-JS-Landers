@@ -427,7 +427,7 @@
                                 <h2>Consulta gratis</h2>
                                 <p>Haz tu consulta gratis en segundos</p>
                             </div>
-                            <form method="POST" id="lead_form" class="standard-contact-form">
+                            <form method="POST" action="../../../submit.php" id="lead_form" class="standard-contact-form">
                                 <div class="row row-cols-lg-2">
                                     <input type="hidden" name="action" value="send_form">
                                     <div id="dynamicInputs" class="d-none"></div>
@@ -659,16 +659,16 @@
             // Initializing signalHelper data
             document.addEventListener('DOMContentLoaded', function () {
                 const initialData = {
-                    adwordsConversionLabel: '7cMXCJqSlI4YEKmFs9cD',
-                    brand_id: '102',
-                    company: 'LD',
-                    dnis: '833-413-7325',
-                    invocaTag: '1595/0551651934',
-                    mediaSourceNameChatPhoneLead: 'LD-MVA-UnbrandedSearch-Google-Spa-CPL',
-                    mediaSourceNameChatWebLead: 'LD-MVA-UnbrandedSearch-Google-Spa-CWL',
-                    mediaSourceNameCall: 'LD-MVA-UnbrandedSearch-Google-Spa-PL',
-                    mediaSourceNameWebhook: 'LD-MVA-UnbrandedSearch-Google-Spa-WL',
-                    agentLanguage: 'Spa'
+                    adwordsConversionLabel: 'null',
+                    brand_id: 'null',
+                    company: 'null',
+                    dnis: 'null',
+                    invocaTag: 'null',
+                    mediaSourceNameChatPhoneLead: 'null',
+                    mediaSourceNameChatWebLead: 'null',
+                    mediaSourceNameCall: 'null',
+                    mediaSourceNameWebhook: 'null',
+                    agentLanguage: 'null'
                 };
 
                 signalVars = conversionSignalPush(initialData, false);
