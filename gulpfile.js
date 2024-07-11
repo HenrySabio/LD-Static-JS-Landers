@@ -331,7 +331,7 @@ function cleanSourcemapTask(cb) {
 function purgeUnusedCssDev() {
   return src('src/css/style.css')
     .pipe(purgecss({
-      content: ['src/pages/**/*.html']
+      content: ['src/**/*.html']
     }))
     .pipe(dest('src/css/'))
     .on("end", () => {

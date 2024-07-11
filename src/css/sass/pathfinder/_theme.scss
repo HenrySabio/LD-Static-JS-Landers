@@ -290,7 +290,7 @@ picture img {
 // Backgrounds - Dark
 // --------------------------------------------------
 .dark:not(.no-dark) {
-	* {
+	*:not(input) {
 		color: $color-text-darkbg !important;
 	}
 

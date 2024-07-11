@@ -41,49 +41,51 @@
 		font-weight: 500;
 	}
 
-	button#prev-btn,
-	button#next-btn,
-	button#submit-btn {
-		z-index: 1;
-		position: relative;
-		border: 0;
-		border-bottom-right-radius: 5px;
-		border-bottom-left-radius: 5px;
-		margin: 0 auto;
-		margin-top: 40px;
-		height: 50px;
-		width: 130px;
-		background: $color-accent-secondary;
-		overflow: hidden;
-		font-size: 17px;
-		font-weight: bold;
-		color: #000;
-		cursor: pointer;
-		transition: color 0.3s;
-		text-align: center;
-		-moz-border-radius-bottomright: 5px;
-		-moz-border-radius-bottomleft: 5px;
-	}
+	#form-box__buttons {
+		button#prev-btn,
+		button#next-btn,
+		button#submit-btn {
+			z-index: 1;
+			position: relative;
+			border: 0;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			margin: 0 auto !important;
+			margin-top: 40px;
+			height: 50px;
+			width: 130px;
+			background: $color-accent-secondary;
+			overflow: hidden;
+			font-size: 17px;
+			font-weight: bold;
+			color: #000;
+			cursor: pointer;
+			transition: color 0.3s;
+			text-align: center;
+			-moz-border-radius-bottomright: 5px;
+			-moz-border-radius-bottomleft: 5px;
+		}
 
-	button#prev-btn:after,
-	button#next-btn:after,
-	button#submit-btn:after {
-		content: "";
-		z-index: -2;
-		position: absolute;
-		top: 90%;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		background: darken($color-accent-secondary, 10%);
-		transition: transform 0.3s;
-	}
+		button#prev-btn:after,
+		button#next-btn:after,
+		button#submit-btn:after {
+			content: "";
+			z-index: -2;
+			position: absolute;
+			top: 90%;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: darken($color-accent-secondary, 10%);
+			transition: transform 0.3s;
+		}
 
-	button#prev-btn:hover::after,
-	button#next-btn:hover::after,
-	button#submit-btn:hover::after {
-		transform: translateY(-80%);
-		transition: transform 0.3s;
+		button#prev-btn:hover::after,
+		button#next-btn:hover::after,
+		button#submit-btn:hover::after {
+			transform: translateY(-80%);
+			transition: transform 0.3s;
+		}
 	}
 
 	.progress {
@@ -247,7 +249,7 @@
 		margin: -75px 0 0 -75px;
 		height: 119px;
 		width: 120px;
-		background-image: url("../img/preloader.webp");
+		background-image: url("../img/preloader.png");
 		animation: spin 2s linear infinite;
 		border-top-color: #fff;
 	}

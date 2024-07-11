@@ -407,3 +407,164 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('.row-multi-step-form')) {
+        (function () {
+
+            let step = document.getElementsByClassName('form-step');
+            let prevBtn = document.getElementById('prev-btn');
+            let nextBtn = document.getElementById('next-btn');
+            let submitBtn = document.getElementById('submit-btn');
+            let form = document.getElementsByTagName('form')[0];
+            let preloader = document.getElementById('preloader-wrapper');
+            let successDiv = document.getElementById('success');
+
+            form.onsubmit = () => {
+                return false;
+            }
+
+            let current_step = 0;
+            let stepCount = step.length - 1;
+            step[current_step].classList.add('d-block');
+            step[current_step].classList.remove('d-none');
+            if (current_step == 0) {
+                prevBtn.style.display = 'none';
+                submitBtn.style.display = 'none';
+                nextBtn.style.display = 'inline-block';
+            }
+
+            if (document.getElementsByClassName('step-counter').length !== 0) {
+                let step_counter = document.getElementsByClassName('step-counter')[0];
+                step_counter.innerHTML = `Step ${current_step + 1} of ${stepCount + 1}`;
+
+                function updateStepCounter(current_step) {
+                    step_counter.innerHTML = `Step ${current_step + 1} of ${stepCount + 1}`;
+                }
+            }
+
+            const progress = (value) => {
+                document.getElementsByClassName('progress-bar')[0].style.width = `${value}%`;
+            }
+
+            function validateField(field) {
+                const errorSpan = document.getElementById(`${field.id}-error`);
+                let isValid = true;
+                let errorMessage = '';
+
+                if (field.id === 'first_name' || field.id === 'last_name') {
+                    const nameRegex = /^[a-zA-Z]+$/;
+                    if (!nameRegex.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter only letters.';
+                    }
+                }
+
+                if (field.id === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email address.';
+                    }
+                }
+
+                if (field.id === 'tel_number') {
+                    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // Basic international phone number regex
+                    if (!phoneRegex.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid phone number.';
+                    }
+                }
+
+                if (!field.value.trim()) {
+                    isValid = false;
+                    errorMessage = 'This field is required.';
+                }
+
+                errorSpan.textContent = isValid ? '' : errorMessage;
+                return isValid;
+            }
+
+            function validateStep(stepIndex) {
+                let isValid = true;
+                let stepFields = step[stepIndex].querySelectorAll('input, select');
+                stepFields.forEach(field => {
+                    if (!validateField(field) || field.value.trim() === '') {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (validateStep(current_step)) {
+                    current_step++;
+                    updateStepCounter(current_step);
+                    let previous_step = current_step - 1;
+                    if ((current_step > 0) && (current_step <= stepCount)) {
+                        prevBtn.style.display = 'inline-block';
+                        step[current_step].classList.remove('d-none');
+                        step[current_step].classList.add('d-block');
+                        step[previous_step].classList.remove('d-block');
+                        step[previous_step].classList.add('d-none');
+                        if (current_step == stepCount) {
+                            submitBtn.style.display = 'inline-block';
+                            nextBtn.style.display = 'none';
+                        }
+                    } else {
+                        if (current_step > stepCount) {
+                            form.onsubmit = () => {
+                                return true;
+                            }
+                        }
+                    }
+                    progress((100 / stepCount) * current_step);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (current_step > 0) {
+                    current_step--;
+                    updateStepCounter(current_step);
+                    let previous_step = current_step + 1;
+                    prevBtn.style.display = 'inline-block';
+                    step[current_step].classList.remove('d-none');
+                    step[current_step].classList.add('d-block')
+                    step[previous_step].classList.remove('d-block');
+                    step[previous_step].classList.add('d-none');
+                    if (current_step < stepCount) {
+                        submitBtn.style.display = 'none';
+                        nextBtn.style.display = 'inline-block';
+                        prevBtn.style.display = 'inline-block';
+                    }
+                }
+
+                if (current_step == 0) {
+                    prevBtn.style.display = 'none';
+                }
+                progress((100 / stepCount) * current_step);
+            });
+
+            submitBtn.addEventListener('click', () => {
+                if (validateStep(current_step)) {
+                    preloader.classList.add('d-block');
+
+                    const timer = ms => new Promise(res => setTimeout(res, ms));
+
+                    timer(3000)
+                        .then(() => {
+                            form.classList.add('loaded');
+                        }).then(() => {
+                            step[stepCount].classList.remove('d-block');
+                            step[stepCount].classList.add('d-none');
+                            prevBtn.style.display = 'none';
+                            submitBtn.style.display = 'none';
+                            successDiv.classList.remove('d-none');
+                            successDiv.classList.add('d-block');
+                        });
+                }
+            });
+        })();
+    }
+});
